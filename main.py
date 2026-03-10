@@ -1,4 +1,4 @@
 from String.String import String
 
 sol = String()
-print(sol.longestCommonPrefix(["flower", "flow", "flight"]))
+print(sol.validWordAbbreviation(word="apple", abbr="a2le"))

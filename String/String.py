@@ -51,3 +51,29 @@ class String:
                     return first[:i]
 
         return first
+
+    def validWordAbbreviation(self, word, abbr):
+        i = 0
+        j = 0
+
+        m = len(word)
+        n = len(abbr)
+
+        while i < m and j < n:
+            if word[i] == abbr[j]:
+                i += 1
+                j += 1
+            elif abbr[j] == "0":
+                return False
+            elif abbr[j].isnumeric():
+                k = j
+
+                while k < n and abbr[k].isnumeric():
+                    k += 1
+
+                i += int(abbr[j:k])
+                j = k
+            else:
+                return False
+
+        return i == m and j == n
